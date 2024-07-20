@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  root "welcome#index"
+  root "index#index"
   get '/*path', to: 'pages#home', constraints: ->(req) { req.path.exclude? 'rails/active_storage' }
 end
