@@ -17,3 +17,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.ttf");
+}
+
+body {
+  font-family: "Poppins";
+}
+
+div, body {
+  transition: background-color 400ms ease;
+}
+
+#option-highlight {
+  transition: width 400ms ease;
+}
+
+.text-carousel {
+  transition: transform 400ms ease;
+}
+
+.text-carousel-arrows {
+  transition: opacity 400ms ease;
+}

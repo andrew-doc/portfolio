@@ -1,15 +1,17 @@
 import React, { useState } from "react";
+import NavBar from "./NavBar";
+import AboutPage from "./AboutPage";
 
 
 export default function Index() {
+  const [selected, setSelected] = useState<"about" | "skills" | "get-in-contact">("about");
+
   return (
-    <div>
-      <div id="topnav" className="bg-indigo-400 flex justify-evenly text-white px-2 py-4">
-        <div>Something</div>
-        <div>Something</div>
-        <div>Something</div>
-        <div>Something</div>
-      </div>
-    </div>
+    <>
+      <NavBar selected={selected} setSelected={setSelected} />
+      {selected == "about" && (
+        <AboutPage />
+      )}
+    </>
   )
 }

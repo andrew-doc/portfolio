@@ -14,7 +14,7 @@ module.exports = {
   },
   devtool: 'eval-source-map',
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.css'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.svg'],
   },
   module: {
     rules: [
@@ -39,7 +39,11 @@ module.exports = {
           'css-loader',
           'postcss-loader'
         ]
-      }
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: 'asset/inline'
+      },
     ]
   },
   devServer: {

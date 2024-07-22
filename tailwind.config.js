@@ -8,9 +8,9 @@ module.exports = {
     './app/assets/javascripts/**/*.ts',
     './app/assets/javascripts/**/*.tsx',
   ],
+  darkMode: "class",
   theme: {
     extend: {},
   },
   plugins: []
 }
-

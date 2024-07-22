@@ -9,7 +9,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body>
+  <body class="dark:bg-black">
     <%= yield %>
     <%= javascript_include_tag 'main', src: 'http://localhost:9000/packs/main.tsx' %>
   </body>
