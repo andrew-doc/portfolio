@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  get '*path', to: 'index#index', constraints: ->(req) { !req.xhr? && req.format.html? }
+
   root "index#index"
-  get '/*path', to: 'pages#home', constraints: ->(req) { req.path.exclude? 'rails/active_storage' }
 end
