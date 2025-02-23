@@ -1,8 +1,22 @@
 import React, { useEffect, useRef, useState } from "react"
 import TextCarousel from "./TextCarousel"
+//@ts-ignore
+import reactImg from "../../images/react.svg";
+//@ts-ignore
+import solidImg from "../../images/solid.svg";
+//@ts-ignore
+import postgresImg from "../../images/postgresql.svg";
+//@ts-ignore
+import railsImg from "../../images/rails.svg";
+//@ts-ignore
+import tailwindImg from "../../images/tailwind.svg";
+import ExperienceTopic from "./ExperienceTopic";
 
 export default function AboutPage() {
   const [scrollY, setScrollY] = useState(0);
+  const [experienceSelected, setExperienceSelected] = useState("React");
+  const [experienceHover, setExperienceHover] = useState("");
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,8 +59,16 @@ export default function AboutPage() {
         </div>
         <div>
           <div className="text-[2rem] flex justify-center font-bold">Experience</div>
+          <div className="flex justify-evenly mt-10">
+
+            <ExperienceTopic experienceHover={[experienceHover, setExperienceHover]} experienceSelected={[experienceSelected, setExperienceSelected]} image={reactImg} name="React" />
+            <ExperienceTopic experienceHover={[experienceHover, setExperienceHover]} experienceSelected={[experienceSelected, setExperienceSelected]} image={solidImg} name="Solid" />
+            <ExperienceTopic experienceHover={[experienceHover, setExperienceHover]} experienceSelected={[experienceSelected, setExperienceSelected]} image={postgresImg} name="Postgres" />
+            <ExperienceTopic experienceHover={[experienceHover, setExperienceHover]} experienceSelected={[experienceSelected, setExperienceSelected]} image={railsImg} name="Rails" />
+            <ExperienceTopic experienceHover={[experienceHover, setExperienceHover]} experienceSelected={[experienceSelected, setExperienceSelected]} image={tailwindImg} name="Tailwind" />
+
+          </div>
           <div className="p-4 mx-10 text-center w-[50vw]">
-            
           </div>
         </div>
         <div className="flex flex-col py-20">
